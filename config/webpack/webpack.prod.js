@@ -70,7 +70,8 @@ module.exports = {
               'img:srcset',
               'link:href',
               'source:src',
-              'source:srcset'
+              'source:srcset',
+              'use:xlink:href'
             ]
           }
         },
@@ -106,7 +107,7 @@ module.exports = {
     }, {
 
       /* Load fonts */
-      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
           loader: 'file-loader',
           options: {

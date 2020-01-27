@@ -1,0 +1,20 @@
+block header
+  header.header
+    img.header__logo(src="../../assets/img/logo.png", alt="Trillo logo")
+    form.search(action="#")
+      input.search__input(type="text" placeholder="Search hotels")
+      button.search__button
+        svg.search__icon
+          use(xlink:href="../../assets/img/sprite.svg#icon-magnifying-glass")
+    nav.user-nav
+      .user-nav__icon-box
+        svg.user-nav__icon
+          use(xlink:href="../../assets/img/sprite.svg#icon-bookmark")
+        span.user-nav__notification 7
+      .user-nav__icon-box
+        svg.user-nav__icon
+          use(xlink:href="../../assets/img/sprite.svg#icon-chat")
+        span.user-nav__notification 13
+      .user-nav__user
+        img.user-nav__user-photo(src="../../assets/img/user.jpg", alt="User photo")
+        span.user-nav__user-name Souveek
