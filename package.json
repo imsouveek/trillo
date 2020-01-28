@@ -13,6 +13,7 @@
   "author": "Souveek Bose",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.7.4",
     "@babel/register": "^7.7.4",
     "@babel/runtime": "^7.7.4",
     "express": "^4.17.1",
@@ -20,7 +21,6 @@
     "postcss-preset-env": "^6.7.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "babel-loader": "^8.0.6",
