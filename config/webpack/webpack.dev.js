@@ -10,6 +10,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 // Have to export webpack settings object
 module.exports = {
@@ -150,6 +151,14 @@ module.exports = {
     // Delete output directory before each build
     new CleanWebpackPlugin(),
 
+    // Copy files for injecting
+    new CopyPlugin([
+      {
+        from: path.resolve(__dirname, '../../src/client/assets/js/svg4everybody.min.js'),
+        to: path.resolve(__dirname, '../../dist')
+      }
+    ]),
+
     // Enable source maps
     new webpack.SourceMapDevToolPlugin({}),
 
@@ -162,7 +171,7 @@ module.exports = {
     // Provide template for index.html
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../../src/client/templates/views/index.pug'),
-      filename: 'index.html',
+      filename: 'index.html'
     }),
   ],
 

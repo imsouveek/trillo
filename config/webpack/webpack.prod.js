@@ -9,6 +9,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -133,6 +134,14 @@ module.exports = {
 
     // Delete output directory before each build
     new CleanWebpackPlugin(),
+
+    // Copy files for injecting
+    new CopyPlugin([
+      {
+        from: path.resolve(__dirname, '../../src/client/assets/js/svg4everybody.min.js'),
+        to: path.resolve(__dirname, '../../dist')
+      }
+    ]),
 
     /*
       Special control for source maps. "fileContext" sets root directory, "filename" sets
