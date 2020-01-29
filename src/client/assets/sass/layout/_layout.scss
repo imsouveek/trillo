@@ -48,6 +48,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @media only screen and (max-width: $bp-small) {
+    flex: 1 1 auto;
+  }
+
   .legal {
     font-size: 1.2rem;
     padding: 2.5rem;
@@ -71,4 +75,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: $bp-small) {
+    flex: 1 1 auto;
+  }
 }
